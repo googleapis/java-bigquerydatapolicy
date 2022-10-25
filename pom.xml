@@ -79,7 +79,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-bigquerydatapolicy-v1beta1</artifactId>
-        <version>0.1.0</version><!-- {x-version-update:proto-google-cloud-bigquerydatapolicy-v1beta1:current} -->
+        <version>0.2.0</version><!-- {x-version-update:proto-google-cloud-bigquerydatapolicy-v1beta1:current} -->
       </dependency>
 
       <dependency>
