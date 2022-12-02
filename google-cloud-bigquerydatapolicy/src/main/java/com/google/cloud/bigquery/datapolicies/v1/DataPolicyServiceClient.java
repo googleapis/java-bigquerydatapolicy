@@ -14,19 +14,18 @@
  * limitations under the License.
  */
 
-package com.google.cloud.bigquery.datapolicies.v1beta1;
+package com.google.cloud.bigquery.datapolicies.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.bigquery.datapolicies.v1beta1.stub.DataPolicyServiceStub;
-import com.google.cloud.bigquery.datapolicies.v1beta1.stub.DataPolicyServiceStubSettings;
+import com.google.cloud.bigquery.datapolicies.v1.stub.DataPolicyServiceStub;
+import com.google.cloud.bigquery.datapolicies.v1.stub.DataPolicyServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -134,7 +133,6 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class DataPolicyServiceClient implements BackgroundResource {
   private final DataPolicyServiceSettings settings;
@@ -408,6 +406,97 @@ public class DataPolicyServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateDataPolicyRequest, DataPolicy> updateDataPolicyCallable() {
     return stub.updateDataPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Renames the id (display name) of the specified data policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataPolicyServiceClient dataPolicyServiceClient = DataPolicyServiceClient.create()) {
+   *   String name = "name3373707";
+   *   String newDataPolicyId = "newDataPolicyId288407927";
+   *   DataPolicy response = dataPolicyServiceClient.renameDataPolicy(name, newDataPolicyId);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the data policy to rename. The format is
+   *     `projects/{project_number}/locations/{location_id}/dataPolicies/{data_policy_id}`
+   * @param newDataPolicyId Required. The new data policy id.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DataPolicy renameDataPolicy(String name, String newDataPolicyId) {
+    RenameDataPolicyRequest request =
+        RenameDataPolicyRequest.newBuilder()
+            .setName(name)
+            .setNewDataPolicyId(newDataPolicyId)
+            .build();
+    return renameDataPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Renames the id (display name) of the specified data policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataPolicyServiceClient dataPolicyServiceClient = DataPolicyServiceClient.create()) {
+   *   RenameDataPolicyRequest request =
+   *       RenameDataPolicyRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setNewDataPolicyId("newDataPolicyId288407927")
+   *           .build();
+   *   DataPolicy response = dataPolicyServiceClient.renameDataPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DataPolicy renameDataPolicy(RenameDataPolicyRequest request) {
+    return renameDataPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Renames the id (display name) of the specified data policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataPolicyServiceClient dataPolicyServiceClient = DataPolicyServiceClient.create()) {
+   *   RenameDataPolicyRequest request =
+   *       RenameDataPolicyRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setNewDataPolicyId("newDataPolicyId288407927")
+   *           .build();
+   *   ApiFuture<DataPolicy> future =
+   *       dataPolicyServiceClient.renameDataPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   DataPolicy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RenameDataPolicyRequest, DataPolicy> renameDataPolicyCallable() {
+    return stub.renameDataPolicyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -712,6 +801,7 @@ public class DataPolicyServiceClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   for (DataPolicy element : dataPolicyServiceClient.listDataPolicies(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -744,6 +834,7 @@ public class DataPolicyServiceClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<DataPolicy> future =
    *       dataPolicyServiceClient.listDataPoliciesPagedCallable().futureCall(request);
@@ -777,6 +868,7 @@ public class DataPolicyServiceClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   while (true) {
    *     ListDataPoliciesResponse response =
