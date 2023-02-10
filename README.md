@@ -12,6 +12,13 @@ Java idiomatic client for [BigQuery DataPolicy API][product-docs].
 > make backwards-incompatible changes.
 
 
+:bus: In October 2022, this library has moved to
+[google-cloud-java/java-bigquerydatapolicy](
+https://github.com/googleapis/google-cloud-java/tree/main/java-bigquerydatapolicy).
+This repository will be archived in the future.
+Future releases will appear in the new repository (https://github.com/googleapis/google-cloud-java/releases).
+The Maven artifact coordinates (`com.google.cloud:google-cloud-bigquerydatapolicy`) remain the same.
+
 ## Quickstart
 
 
